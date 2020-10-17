@@ -27,6 +27,10 @@ using Base:
     to_tuple_type,
     unwrap_unionall
 
+# Import some interesting functions so that `bp add optimize`
+# etc. work:
+using Core.Compiler: optimize, run_passes, replace_code_newstyle!
+
 #! format: off
 
 function code_typed(@nospecialize(f), @nospecialize(types=Tuple);
